@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 
-import { HamburgerMenuIcon, BellIcon, MagnifyingGlassIcon, SunIcon, GearIcon } from "@radix-ui/react-icons"
+import { HamburgerMenuIcon, BellIcon, MagnifyingGlassIcon, SunIcon, GearIcon, MoonIcon } from "@radix-ui/react-icons"
 
 
 import { Button } from '@/components/ui/Button'
@@ -28,6 +28,10 @@ const Navbar = () => {
 
     if (!mounted) {
         return null
+    }
+
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
     return (
@@ -61,8 +65,16 @@ const Navbar = () => {
             <div className='flex justify-between items-center gap-5'>
                 <div className='hidden md:flex justify-between items-center gap-5'>
                     <div>
-                        <Button variant="outline" size="icon" className='bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 cursor-pointer text' onClick={() => { }}>
-                            <SunIcon className='w-4 h-4' />
+                        <Button 
+                            variant="outline" 
+                            size="icon" 
+                            className='bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 cursor-pointer text'
+                            onClick={toggleTheme}>
+                                {
+                                    theme === 'light' ? 
+                                    <MoonIcon className='w-4 h-4' /> : 
+                                    <SunIcon className='w-4 h-4' />
+                                }
                         </Button>
                     </div>
 

@@ -2,8 +2,9 @@
 
 import { Button } from '@/components/ui/Button'
 import { useSidebarStore } from '@/state'
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { ArchiveIcon, BackpackIcon, ClipboardIcon, DashboardIcon, GearIcon, HamburgerMenuIcon, PersonIcon } from '@radix-ui/react-icons'
 import React, { useEffect, useState } from 'react'
+import SidebarLink from './SidebarLink'
 
 
 const Sidebar = () => {
@@ -40,11 +41,16 @@ const Sidebar = () => {
 
       { /* SIDEBAR LINKS */}
       <div className='flex-grow mt-8'>
-
+        <SidebarLink href='/dashboard' icon={DashboardIcon} label='Dashboard' isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href='/inventory' icon={ArchiveIcon} label='Inventory' isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href='/products' icon={ClipboardIcon} label='Products' isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href='/users' icon={PersonIcon} label='Users' isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href='/settings' icon={GearIcon} label='Settings' isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href='/expenses' icon={BackpackIcon} label='Expenses' isCollapsed={isSidebarCollapsed}/>
       </div>
 
       {/* SIDEBAR FOOTER */}
-      <div>
+      <div className={`${isSidebarCollapsed ? 'hidden' : 'block'} mb-10`}>
         <p className='text-center text-lg text-gray-500'>&copy; 2024</p>
       </div>
     </div>

@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Tech Stack
+
+- **Next JS**
+- **.NET Backend**
+- **ORM: EF Core**
+- **Tailwind + shadcn/ui**
+- **Zustand****
+- **Node.js**
+- **AWS EC2**
+- **AWS RDS**
+- **AWS API Gateway**
+- **AWS Amplify**
+- **AWS S3**
+
+
 ## Getting Started
 
 First, run the development server:

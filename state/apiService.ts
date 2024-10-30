@@ -67,3 +67,32 @@ export const fetchDashboardMetrics = async () => {
     console.error("Failed to fetch dashboard metrics:", error);
   }
 }
+
+
+export const searchProducts = async (searchString: string) => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/products`,
+      {
+        params: { searchString }, 
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to search products:", error);
+    return []; 
+  }
+};
+
+export const addProduct = async (product: NewProduct) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/products`,
+      product
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to add product:", error);
+    return null; 
+  }
+};

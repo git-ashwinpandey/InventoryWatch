@@ -74,13 +74,13 @@ export const searchProducts = async (searchString: string) => {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/products`,
       {
-        params: { searchString }, 
+        params: { searchString },
       }
     );
     return response.data;
   } catch (error) {
     console.error("Failed to search products:", error);
-    return []; 
+    return [];
   }
 };
 
@@ -93,6 +93,28 @@ export const addProduct = async (product: NewProduct) => {
     return response.data;
   } catch (error) {
     console.error("Failed to add product:", error);
-    return null; 
+    return null;
   }
 };
+
+export const fetchUsers = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/users`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch dashboard metrics:", error);
+  }
+}
+
+export const fetchExpense = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/expenses`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch dashboard metrics:", error);
+  }
+}

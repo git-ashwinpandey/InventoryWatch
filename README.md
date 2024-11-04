@@ -6,13 +6,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **.NET Backend**
 - **ORM: EF Core**
 - **Tailwind + shadcn/ui**
-- **Zustand****
+- **Zustand**
 - **Node.js**
 - **AWS EC2**
 - **AWS RDS**
 - **AWS API Gateway**
 - **AWS Amplify**
 - **AWS S3**
+
+- Backend: https://github.com/git-ashwinpandey/InventoryWatch-Backend
 
 
 ## Getting Started
